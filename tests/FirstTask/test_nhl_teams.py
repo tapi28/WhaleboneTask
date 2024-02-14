@@ -3,18 +3,18 @@ from typing import List, Dict, Any
 from helpers import playwright
 
 
-def test_count_of_teams_is_32(nhl_teams: List[Dict[str, Any]]) -> None:
+def test_count_of_teams_is_32(nhl_teams: List[Dict[str, Any]]):
     assert len(nhl_teams) == 32, "Expected 32 teams in the response."
 
 
-def test_oldest_team_is_canadiens(nhl_teams: List[Dict[str, Any]]) -> None:
+def test_oldest_team_is_canadiens(nhl_teams: List[Dict[str, Any]]):
     oldest_team = min(nhl_teams, key=lambda x: x["firstYearOfPlay"])
     assert (
         oldest_team["name"] == "Montreal Canadiens"
     ), "Expected Montreal Canadiens to be the oldest team"
 
 
-def test_city_with_more_than_one_team(nhl_teams: List[Dict[str, Any]]) -> None:
+def test_city_with_more_than_one_team(nhl_teams: List[Dict[str, Any]]):
     cities = [team["location"] for team in nhl_teams]
     city_counts = {city: cities.count(city) for city in set(cities)}
 
