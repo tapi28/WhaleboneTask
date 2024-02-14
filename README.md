@@ -11,4 +11,6 @@ The solution was developed using Python, pytest and Playwright.
 3. Create virtual environment using Python version 3.8 or newer as the base interpreter. 
 4. Run the command `pip install -r requirements.txt` in your terminal and wait for all the requirements to be installed.
 5. Run the command `playwright install` and wait for Playwright to install the browsers.
-6. Enjoy!
+6. For running the Playwright tests in headed mode, add `--headed` argument to the configuration.
+7. For using the Playwright Inspector during the test run, add environment variable `PWDEBUG=1` to the configuration.
+8. Enjoy!
