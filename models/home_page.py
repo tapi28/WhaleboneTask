@@ -7,6 +7,9 @@ class HomePage:
         self.load_delay = page.locator("text=Load Delay")
         self.progress_bar = page.locator("text=Progress Bar")
 
+        # Locator on Load Delay page needed for the loading time test
+        self.button_appearing_after_delay = page.locator(".btn.btn-primary")
+
     def navigate(self):
         self.page.goto("http://uitestingplayground.com/")
 
@@ -18,3 +21,6 @@ class HomePage:
 
     def click_progress_bar(self):
         self.progress_bar.click()
+
+    def click_button_appearing_after_delay(self):
+        self.button_appearing_after_delay.click()
